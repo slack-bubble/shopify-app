@@ -1,0 +1,16 @@
+{% comment %}
+  Slack Bubble Chat Widget
+{% endcomment %}
+
+{% assign widget_id = app.metafields.slack_bubble.widget_id.value | strip %}
+{% if widget_id != blank %}
+  <script src="https://slack-bubble.com/bubble.js?widget_id={{ widget_id | url_encode | escape }}" async></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Slack Bubble Chat Widget",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}
